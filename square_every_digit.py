@@ -7,6 +7,13 @@
 
 def square_digits(num):
     nums = str(num)
-    lst = list(nums)
-    print(lst)
+    total = ''
     
+    for i in nums:
+        i = int(i)
+        i = i * i
+        i = str(i)
+        total = total + i
+        
+    total = int(total)
+    return total
