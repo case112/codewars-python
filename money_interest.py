@@ -27,20 +27,12 @@
 
 
 def calculate_years(principal, interest, tax, desired):
-    Y = 0
+    years = 0
     if desired == principal:
-        return Y
+        return years
     else:
-        PI = principal * interest
-        T = PI * tax
-        total = principal + PI - T
-        print(total)
-        Y += 1
-        while total < desired:
-            PI = total * interest
-            T = PI * tax
-            total = total + PI - T
-            print(total)
-            Y += 1
-        return Y
+        while principal < desired:
+            principal += (interest * principal) * (1 - tax)
+            years += 1
+        return years
         
