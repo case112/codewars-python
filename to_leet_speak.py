@@ -10,7 +10,7 @@
 
 # In this kata we use a simple LeetSpeak dialect. Use this alphabet:
 
-def to_leet_speak(str):
+def to_leet_speak(string):
     leet = {
       "A" : '@',
       "B" : '8',
@@ -39,9 +39,14 @@ def to_leet_speak(str):
       "Y" : 'Y',
       "Z" : '2'
     }
-    
-    for i in str:
-        h = ''
-        h += leet[i]
+    res = ''
+    for i in string:
+        if i == ' ':
+            res += ' '
+        if i != ' ':
+            h = leet[i]
+            h = str(h)
+            res += h
         
-        print(h)
+    return res
+
